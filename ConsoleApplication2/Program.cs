@@ -12,9 +12,8 @@ namespace ConsoleApplication2
 		public static string dir = @"C:\Users\piete\Documents\visual studio 2015\Projects\ConsoleApplication2\ConsoleApplication2\input\";
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Day 1");
-			//Day1.day1();
-			Day2.part2();
+			Console.WriteLine("Day 3");
+			Day3.part2();
 			Console.ReadKey();
 		}
 
