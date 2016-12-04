@@ -5,25 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication2
-{
-	class Day2
-	{
-		public static void part1()
-		{
+namespace ConsoleApplication2 {
+	class Day2 {
+		public static void part1() {
 			FileInfo input = new FileInfo(Program.dir + "day2.txt");
 			var stream = input.OpenText();
 			int currentButton = 5;
-			while (!stream.EndOfStream)
-			{
+			while (!stream.EndOfStream) {
 				string s = stream.ReadLine();
-				foreach (char c in s)
-				{
-					switch (c)
-					{
+				foreach (char c in s) {
+					switch (c) {
 						case 'L':
-							switch (currentButton)
-							{
+							switch (currentButton) {
 								case 1: break;
 								case 4: break;
 								case 7: break;
@@ -33,8 +26,7 @@ namespace ConsoleApplication2
 							}
 							break;
 						case 'U':
-							switch (currentButton)
-							{
+							switch (currentButton) {
 								case 1: break;
 								case 2: break;
 								case 3: break;
@@ -44,8 +36,7 @@ namespace ConsoleApplication2
 							}
 							break;
 						case 'D':
-							switch (currentButton)
-							{
+							switch (currentButton) {
 								case 7: break;
 								case 8: break;
 								case 9: break;
@@ -55,8 +46,7 @@ namespace ConsoleApplication2
 							}
 							break;
 						case 'R':
-							switch (currentButton)
-							{
+							switch (currentButton) {
 								case 3: break;
 								case 6: break;
 								case 9: break;
@@ -71,8 +61,7 @@ namespace ConsoleApplication2
 			}
 
 		}
-		public static void part2()
-		{
+		public static void part2() {
 			FileInfo input = new FileInfo(Program.dir + "day2.txt");
 			var stream = input.OpenText();
 			int[,] keypad = new int[,]
@@ -85,41 +74,34 @@ namespace ConsoleApplication2
 			};
 			int y = 2;
 			int x = 0;
-			while (!stream.EndOfStream)
-			{
+			while (!stream.EndOfStream) {
 				string s = stream.ReadLine();
 				//s = "ULL";
-				foreach (char c in s)
-				{
-					switch (c)
-					{
+				foreach (char c in s) {
+					switch (c) {
 						case 'L':
-							if (x - 1 >= 0 && keypad[x - 1, y] != 0)
-							{
+							if (x - 1 >= 0 && keypad[x - 1, y] != 0) {
 								x = x - 1;
 							}
 							break;
 						case 'R':
-							if (x + 1 <= 4 && keypad[x + 1, y] != 0)
-							{
+							if (x + 1 <= 4 && keypad[x + 1, y] != 0) {
 								x = x + 1;
 							}
 							break;
 						case 'D':
-							if (y + 1 <= 4 && keypad[x, y + 1] != 0)
-							{
+							if (y + 1 <= 4 && keypad[x, y + 1] != 0) {
 								y = y + 1;
 							}
 							break;
 						case 'U':
-							if (y - 1 >= 0 && keypad[x, y - 1] != 0)
-							{
+							if (y - 1 >= 0 && keypad[x, y - 1] != 0) {
 								y = y - 1;
 							}
 							break;
 					}
 				}
-				Console.WriteLine(keypad[y,x]);
+				Console.WriteLine(keypad[y, x]);
 			}
 			Console.WriteLine();
 		}
