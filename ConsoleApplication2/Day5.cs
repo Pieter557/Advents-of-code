@@ -12,9 +12,9 @@ namespace ConsoleApplication2 {
 			int charsfound = 0;
 			int index = 0;
 			string password = "";
-			while(charsfound < 8) {
-				string hash = md5hash(input+ index);
-				if(hash.StartsWith("00000")) {
+			while (charsfound < 8) {
+				string hash = md5hash(input + index);
+				if (hash.StartsWith("00000")) {
 					password += hash[5];
 					Console.WriteLine(hash);
 					charsfound++;
@@ -30,7 +30,7 @@ namespace ConsoleApplication2 {
 			while (password.Contains('-')) {
 				string hash = md5hash(input + index);
 				if (hash.StartsWith("00000")) {
-					if(hash[5] < '8') {
+					if (hash[5] < '8') {
 						int pos = int.Parse(hash[5].ToString());
 						if (password[pos] == '-') {
 							password[pos] = hash[6];
@@ -51,6 +51,7 @@ namespace ConsoleApplication2 {
 			for (int i = 0; i < bytes.Length; i++) {
 				hash.Append(bytes[i].ToString("x2"));
 			}
+
 			return hash.ToString();
 		}
 	}

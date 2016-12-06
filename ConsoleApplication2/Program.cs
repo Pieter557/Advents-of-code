@@ -9,8 +9,8 @@ namespace ConsoleApplication2 {
 	class Program {
 		public static string dir = @"C:\Users\piete\Documents\visual studio 2015\Projects\ConsoleApplication2\ConsoleApplication2\input\";
 		static void Main(string[] args) {
-			Console.WriteLine("Day 3");
-			Day5.part2();
+			Console.WriteLine("Day x");
+			Day6.part1();
 			Console.ReadKey();
 		}
 
