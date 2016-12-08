@@ -7,10 +7,13 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication2 {
 	class Day8 {
+		private const int height = 6;
+		private const int width = 50;
+
 		internal static void part1() {
 			FileInfo input = new FileInfo(Program.dir + "day8.txt");
 			var stream = input.OpenText();
-			bool[,] seq = new bool[6, 50];
+			bool[,] seq = new bool[height, width];
 			int pixels = 0;
 			while (!stream.EndOfStream) {
 				List<string> operation = stream.ReadLine().Split().ToList();
@@ -30,22 +33,22 @@ namespace ConsoleApplication2 {
 							case "column":
 								int column = int.Parse(operation[2].Split('=')[1].ToString());
 								int amountc = int.Parse(operation[4].ToString());
-								bool[] tmp = new bool[6];
-								for (int i = 0; i < 6; i++) {
+								bool[] tmp = new bool[height];
+								for (int i = 0; i < height; i++) {
 									tmp[(i + amountc) % tmp.Length] = seq[i, column];
 								}
-								for (int i = 0; i < 6; i++) {
+								for (int i = 0; i < height; i++) {
 									seq[i, column] = tmp[i];
 								}
 								break;
 							case "row":
 								int row = int.Parse(operation[2].Split('=')[1].ToString());
 								int amountr = int.Parse(operation[4].ToString());
-								bool[] tmpr = new bool[50];
-								for (int i = 0; i < 50; i++) {
+								bool[] tmpr = new bool[width];
+								for (int i = 0; i < width; i++) {
 									tmpr[(i + amountr) % tmpr.Length] = seq[row, i];
 								}
-								for (int i = 0; i < 50; i++) {
+								for (int i = 0; i < width; i++) {
 									seq[row, i] = tmpr[i];
 								}
 								break;
@@ -55,8 +58,8 @@ namespace ConsoleApplication2 {
 
 				}
 			}
-			for (int i = 0; i < 6; i++) {
-				for (int j = 0; j < 50; j++) {
+			for (int i = 0; i < height; i++) {
+				for (int j = 0; j < width; j++) {
 					if (seq[i, j]) {
 						Console.Write('#');
 						pixels++;
