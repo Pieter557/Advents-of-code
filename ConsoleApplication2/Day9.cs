@@ -58,7 +58,7 @@ namespace ConsoleApplication2 {
 			FileInfo input = new FileInfo(Program.dir + "day9.txt");
 			StringBuilder sb = new StringBuilder();
 			string data = input.OpenText().ReadLine();
-			//data = "(25x3)(3x3)ABC(2x3)XY(5x2)PQRSTX(18x9)(3x2)TWO(5x7)SEVEN";
+			data = "(1x3)(2x2)A";
 			long chars = solve(data) ;
 			 
 			Console.WriteLine(chars);

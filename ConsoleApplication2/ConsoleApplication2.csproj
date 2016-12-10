@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Day1.cs" />
+    <Compile Include="Day10.cs" />
     <Compile Include="Day2.cs" />
     <Compile Include="Day3.cs" />
     <Compile Include="Day4.cs" />
@@ -82,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="input\day1.txt" />
+    <Content Include="input\day10.txt" />
     <Content Include="input\day2.txt" />
     <Content Include="input\day3.txt" />
     <Content Include="input\day4.txt" />
