@@ -29,4 +29,13 @@ namespace ConsoleApplication2 {
 			 */
 		}
 	}
+
 }
+/*
+FF:	POG		TG	TM	PRG		RG	RM	CG	CM
+SF		PM				PRM					
+TF											
+SF											
+	*/
+
+
