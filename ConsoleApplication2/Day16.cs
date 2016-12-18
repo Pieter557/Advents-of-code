@@ -34,18 +34,7 @@ namespace ConsoleApplication2 {
 
 		}
 		internal static string invert(string s) {
-			/*string r = string.Empty;
-			for (int i = 0; i < s.Length; i++) {
-				if(s[i] == '1') {
-					r += "0";
-				} else {
-					r += "1";
-				}
-			}
-			return r;
-			*/
 			return new string(s.Select(c => c == '1' ? '0' : '1').ToArray());
-
 		}
 		internal static string reverse(string s) {
 			char[] array = s.ToCharArray();
