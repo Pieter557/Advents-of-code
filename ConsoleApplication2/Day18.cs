@@ -8,10 +8,10 @@ namespace ConsoleApplication2 {
 	class Day18 {
 		internal static string input = ".^^..^...^..^^.^^^.^^^.^^^^^^.^.^^^^.^^.^^^^^^.^...^......^...^^^..^^^.....^^^^^^^^^....^^...^^^^..^";
 		internal static int rowlength;
-		internal static int rows = 10;
+		internal static int rows = 400000;
 		internal static List<bool> tiles = new List<bool>(); // true = trap; false = safe
 		internal static void part1() {
-			input = ".^^.^.^^^^";
+			//input = ".^^.^.^^^^";
 			foreach (char c in input) {
 				if (c == '.') {
 					tiles.Add(false);
@@ -21,8 +21,7 @@ namespace ConsoleApplication2 {
 			}
 			int currentrow = 0;
 			rowlength = input.Length;
-			while (currentrow < rows) {
-				Console.WriteLine(currentrow);
+			while (currentrow < rows - 1) {
 				for (int i = 0; i < input.Length; i++) {
 					bool left, center, right;
 					if (i == 0) { // first tile on row
@@ -43,7 +42,7 @@ namespace ConsoleApplication2 {
 				}
 				currentrow++;
 			}
-			printmap();
+			//printmap();
 			Console.WriteLine(tiles.Count(x => x == false));
 		}
 
