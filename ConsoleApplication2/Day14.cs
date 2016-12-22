@@ -12,7 +12,7 @@ namespace ConsoleApplication2 {
 		internal static string salt = "yjdafjpo";
 		internal static int keysNeeded = 64;
 		internal static void part1() {
-			int index = 0;
+			
 			int keysfound = 0;
 			Dictionary<int, string> hashes = createHashes();
 			Regex r = new Regex(@"(.)\1\1");
