@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication2 {
 	class Program {
-		public static string dir = @"C:\Users\piete\Documents\visual studio 2015\Projects\ConsoleApplication2\ConsoleApplication2\input\";
-		static void Main(string[] args) {
+		//public static string dir = @"C:\Users\piete\Documents\visual studio 2015\Projects\ConsoleApplication2\ConsoleApplication2\input\";
+        public static string dir = @"C:\Users\piete\Source\Repos\Advents-of-code\ConsoleApplication2\input\";
+
+        static void Main(string[] args) {
 			Console.WriteLine("Day x");
-			Day24.part1();
+			Day25.part1();
 			Console.ReadKey();
 		}
 
